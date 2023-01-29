@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+  <div class="form-section container">
+    <h1>Registration on our service</h1>
+    <form method='POST'>
+      {% csrf_token %}
+      {{ form }}
+      <button class="btn btn-outline-warning mt-2" type="submit">Registration</button>
+    </form>
+    <hr>
+    <p>Have account? <a href="{% url 'user' %}">Log In to your account!</a></p>
+  </div>
+{% endblock main %}
