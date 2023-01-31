@@ -7,6 +7,10 @@
 
 body {
     background: #fff;
+    background-image: url(pictures/ecommerceBG.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-attach: fixed;
     font-weight: 300;
     font-family: 'Montserrat', sans-serif;
 }
