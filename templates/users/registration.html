@@ -2,13 +2,13 @@
 
 {% block main %}
   <div class="form-section container">
-    <h1>Registration on our service</h1>
+    <h1>Zarejestruj się i rozpocznij naukę</h1>
     <form method='POST'>
       {% csrf_token %}
       {{ form }}
-      <button class="btn btn-outline-warning mt-2" type="submit">Registration</button>
+      <button class="btn btn-outline-warning mt-2" type="submit">Rejestracja</button>
     </form>
     <hr>
-    <p>Have account? <a href="{% url 'user' %}">Log In to your account!</a></p>
+    <p>Masz konto? <a href="{% url 'user' %}">Log In!</a></p>
   </div>
 {% endblock main %}

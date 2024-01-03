@@ -2,11 +2,11 @@
 
 {% block main %}
   <div class="form-section container">
-    <h1>Password reset</h1>
+    <h1>Resetowania hasła</h1>
     <form method='POST' class="form-register auth container">
       {% csrf_token %}
       {{ form }}
-      <button class="btn btn-danger" type="submit"> Password change request </button>
+      <button class="btn btn-danger" type="submit"> Prośba o zmianę hasła </button>
     </form>
   </div>
 {% endblock main %}

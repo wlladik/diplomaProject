@@ -14,21 +14,25 @@
 
         <h3>{{ object.title }}</h3>
     </div>
-    <div class="aside">
-        <h1>About course</h1>
-        <p>{{ object.desc }}</p>
+    <div class="aside form-section">
+        <h1>Czego się nauczysz:</h1>
+        <p>{{ object.desc|safe }}</p>
 
         {% if object.is_free == False and user.is_authenticated == False %}
-        <p>Hey, you must be <a href="{% url 'reg' %}">register</a>.</p>
+        <p>Hej, musisz być <a href="{% url 'reg' %}">zarejestrowany</a> lub <a href="{% url 'user' %}">zalogowany</a>.</p>
         {% else %}
             {% if object.is_free == True or user.profile.account_type == 'full'%}
+                {% if user.is_authenticated == True and user.profile.account_type == 'full' %}
+                    <a href="https://t.me/+Uct6wDKi7fxkMjAy" target="_blank">Kliknij na ten napis aby dolączyć się do Telegramu "ITPlecak Premium"!</a>
+                {% endif %}
+                <h2 align="center">Wybierz lekcje</h2>
                 <ul>
                     {% for el in lessons %}
                         <li><a href="{{ el.get_absolute_url }}">{{ el.title }}</a></li>
                     {% endfor %}
                 </ul>
             {% else %}
-                <p>You've to buy a <a href="{% url 'tariffs' %}">subscription</a>!</p>
+                <p>Musisz kupić <a href="{% url 'tariffs' %}">subskrypcje!</a>!</p>
             {% endif %}
         {% endif %}
     </div>

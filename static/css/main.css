@@ -6,23 +6,23 @@
 }
 
 body {
-    background: #fff;
-    background-image: url(pictures/ecommerceBG.png);
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-attach: fixed;
+    background: rgb(43,9,80);
+    background: linear-gradient(40deg, rgba(43,9,80,1) 0%, rgba(8,0,16,1) 70%, rgba(177,128,128,1) 100%);
+    background-size: 100%;
     font-weight: 300;
     font-family: 'Montserrat', sans-serif;
 }
 
 a {
-    color: #6f6f6f;
+    color: #1f1f1f;
     text-decoration: none;
     transition: color 500ms ease;
+    font-weight: 600;
 }
 
+
 a:hover {
-    color: #1f1f1f;
+    color: #7444c2;
 }
 
 .rounded_block{
@@ -38,22 +38,150 @@ a:hover {
     margin: 0 auto;
 }
 
+.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.movements
+{
+    transition: transform 300ms;
+}
+
+.movementsSVG
+{
+    transition: transform 300ms;
+}
+
+.movementsSVGL
+{
+    transition: transform 300ms;
+}
+
+.container:hover .movements
+{
+    transform: perspective(1000px) translate3d(10px, -50px, 100px);
+}
+
+.container:hover .movementsSVG
+{
+    transform: perspective(1000px) translate3d(20px, 0px, 100px);
+}
+
+.container:hover .movementsSVGL
+{
+    transform: perspective(1000px) translate3d(-20px, 0px, 80px);
+}
+
+
+.fade-in-text {
+  animation: fadeIn 10s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
 header.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
     margin-bottom: 30px;
+    width: 1258px;
 }
 
-header .logo {
-    color: #222;
+.logo {
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-weight: 600;
     font-size: 25px;
 }
 
+.alignImg{
+    vertical-align: middle;
+}
+
+.floatLeft{
+    float: left;
+}
+
+.floatRight{
+    float: right;
+}
+
+.textColor{
+    color: #94bbe9;
+}
+
+.gradient-text {
+  display: none;
+  animation: moveBottom .5s ease-in-out;
+  /* Fallback: Set a background color. */
+  background-color: red;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.textSize{
+    font-size: 100px;
+}
+
+.paddingSVG{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 100%;
+}
+
+.textCourse{
+    text-align: center;
+    margin-top: 0px;
+}
+
+.marginBottom{
+    margin-bottom: 15px;
+}
+
+.marginTop{
+    margin-top: 15px;
+}
+
+.marginLeft{
+    margin-left: 40px;
+}
+
+
+.box-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+
 header nav a {
     margin-left: 15px;
+    color: #ccc8c8;
+}
+
+header nav a:hover {
+    color: #94bbe9;
 }
 
 .courses {
@@ -63,7 +191,8 @@ header nav a {
 }
 
 .courses .course {
-    background: #342645;
+    background: rgb(234,128,175);
+    background: radial-gradient(circle, rgba(234,128,175,1) 0%, rgba(128,174,229,1) 100%);
     padding: 20px;
     box-sizing: border-box;
     width: 30%;
@@ -84,7 +213,7 @@ header nav a {
     display: inline-block;
     padding: 10px 12px;
     border-radius: 5px;
-    background: #ca5e48;
+    background: #342645;
     color: #fff;
     transition: transform 500ms ease;
 }
@@ -105,7 +234,8 @@ header nav a {
 .aside p {margin: 20px 0;}
 
 .presentation {
-    background: #ca5e48;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
     padding: 50px;
     height: 250px;
     box-sizing: border-box;
@@ -134,7 +264,9 @@ header nav a {
 
 .form-section {
     box-sizing: border-box;
-    background: #fff;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    border-radius: 25px;
     padding: 40px 30px;
     box-shadow: 0px 2px 4px 0px rgb(5 5 5 / 5%);
 }
@@ -167,20 +299,636 @@ form input {
     padding: 7px 12px;
     border-radius: 5px;
     border: 0;
-    background: black;
+    background: #342645;
     color: #fff;
     transition: transform 500ms ease;
     cursor: pointer;
 }
-.form-section button:hover {transform: scale(1.2);}
+.form-section button:hover {transform: scale(1.1);}
 hr {margin: 10px 0;}
 
 footer {
-    margin-top: 50px;
+    margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
-.forbr{
-    white-space: pre;
+footer #social-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+footer #social-buttons i {
+  font-size: 35px;
+  transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 5px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-instagram {
+  background: #ea4c89;
+  color: white;
+}
+
+.fa-telegram {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+
+@media (min-width: 993px) and (max-width: 1287px){
+    header.container{
+        width: 800px;
+    }
+
+    .container{
+        width: 800px;
+        margin:auto;
+    }
+
+    .container p{
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .container h1{
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .container a{
+        margin: 10px;
+    }
+
+    .presentation h2{
+        font-size: 19px;
+        padding-top: 0px;
+    }
+    .presentation p{
+        font-size: 18px;
+        text-align: left;
+    }
+
+    .floatLeft{
+        width: 450px;
+        height: 360px;
+    }
+
+   .textSize{
+        font-size: 40px;
+    }
+
+    .rightSide{
+        font-size: 60px;
+        margin-left: 480px;
+    }
+
+    .marginHome{
+        margin: 5px 110px;
+    }
+
+    .courses .course h3 {
+        font-size: 15px;
+    }
+
+    .courses .course{
+        padding: 8px;
+        margin: 0px 10px;
+    }
+
+    .courses .course a {
+        padding: 10px 7px;
+        font-size: 13px;
+    }
+
+    .floatRight{
+        width: 300px;
+        height: 250px;
+    }
+
+    .form-section button {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 992px){
+    header.container{
+        width: 730px;
+    }
+
+    .container{
+        width: 750px;
+        margin: 10px auto;
+    }
+
+    .container p{
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .container h1{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .container a{
+        margin: 10px;
+    }
+
+    .presentation h2{
+        font-size: 18px;
+        padding-top: 0px;
+    }
+    .presentation p{
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .floatLeft{
+        width: 450px;
+        height: 360px;
+    }
+
+   .textSize{
+        font-size: 40px;
+    }
+
+    .rightSide{
+        font-size: 60px;
+        margin: 10px 10px;
+        margin-left: 320px;
+    }
+
+    .marginHome{
+        margin: 5px 35px;
+    }
+
+    .courses .course h3 {
+        font-size: 15px;
+    }
+
+    .courses .course{
+        padding: 8px;
+        margin: 0px 10px;
+    }
+
+    .courses .course a {
+        padding: 10px 7px;
+        font-size: 13px;
+    }
+
+    .floatRight{
+        width: 300px;
+        height: 250px;
+    }
+
+    .form-section button {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+
+@media (min-width: 481px) and (max-width: 768px){
+    .container{
+        width: 400px;
+        margin: 10px auto;
+    }
+
+    .container p{
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .container h1{
+        font-size: 19px;
+        text-align: center;
+    }
+
+    .container a{
+        margin: 30px;
+    }
+
+    form input{
+        width: 200px;
+    }
+
+    .presentation{
+        width: 400px;
+        height: 180px;
+        align: center;
+        padding: 25px;
+        margin-bottom: 10px;
+    }
+
+    .presentation img{
+        width: 104px;
+        top: 61px;
+    }
+
+    .presentation h2{
+        font-size: 9px;
+        padding-top: 0px;
+    }
+
+    .presentation p{
+        font-size: 9px;
+        text-align: left;
+    }
+
+    header.container{
+        width: 500px;
+        align: center;
+        margin-top: 25px;
+    }
+
+    .logo{
+        margin: 10px 10px 10px 10px;
+        background: #ccc8c8;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 23px;
+    }
+
+    .headerTab a{
+        font-size: 10px;
+        float: left;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    img.movements{
+        display: none;
+    }
+
+    img.movementsSVG{
+        display: none;
+    }
+
+    img.movementsSVGL{
+        display: none;
+    }
+
+    img.alignImg{
+        display: none;
+    }
+
+    .displayed{
+        width: 350px;
+        margin: 10px 70px;
+    }
+
+    .logo.alignImg{
+        display: inline-block;
+    }
+
+    h2.textSize{
+        font-size: 25px;
+        margin-left: 0px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    p.marginLeft{
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    h1.fade-in-text{
+        font-size: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .courses {
+        display: inline-block;
+    }
+
+    .courses .course {
+        width: 350px;
+        margin: 20px 90px;
+    }
+
+    .courses .course a{
+        font-size: 17px;
+    }
+
+    .aside{
+        width: 320px;
+        margin: 20px 90px;
+    }
+
+    iframe{
+        height: 200px;
+        width: 245px;
+
+    }
+}
+
+@media (min-width: 392px) and (max-width: 480px){
+    .container{
+        width: 300px;
+        margin:auto;
+    }
+
+    .container p{
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .container h1{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .container a{
+        margin: 30px;
+    }
+
+    form input{
+        width: 200px;
+    }
+
+    .presentation{
+        width: 359px;
+        height: 180px;
+        align: center;
+        padding: 25px;
+        margin-bottom: 10px;
+    }
+
+    .presentation img{
+        width: 104px;
+        top: 61px;
+    }
+
+    .presentation h2{
+        font-size: 9px;
+        padding-top: 0px;
+    }
+
+    .presentation p{
+        font-size: 9px;
+        text-align: left;
+    }
+
+    header.container{
+        width: 400px;
+        align: center;
+        margin-top: 25px;
+    }
+
+    .logo{
+        margin: 10px 10px 10px 10px;
+        background: #ccc8c8;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
+    }
+
+    .headerTab a{
+        font-size: 10px;
+        float: left;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    img.movements{
+        display: none;
+    }
+
+    img.movementsSVG{
+        display: none;
+    }
+
+    img.movementsSVGL{
+        display: none;
+    }
+
+    img.alignImg{
+        display: none;
+    }
+
+    .displayed{
+        width: 350px;
+        margin: 10px 70px;
+    }
+
+    .logo.alignImg{
+        display: inline-block;
+    }
+
+    h2.textSize{
+        font-size: 25px;
+        margin-left: 0px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    p.marginLeft{
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    h1.fade-in-text{
+        font-size: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .courses {
+        display: inline-block;
+    }
+
+    .courses .course {
+        width: 300px;
+        margin: 20px 90px;
+    }
+
+    .courses .course a{
+        font-size: 17px;
+    }
+
+    .aside{
+        width: 300px;
+        margin: 20px 90px;
+    }
+
+    iframe{
+        height: 200px;
+        width: 245px;
+
+    }
+}
+
+@media screen and (max-width: 391px){
+    .container{
+        width: 256px;
+        margin:auto;
+    }
+
+    .container p{
+        font-size: 13px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .container h1{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .container a{
+        margin: 10px;
+    }
+
+    form input{
+        width: 165px;
+    }
+
+    .presentation{
+        width: 250px;
+        height: 180px;
+        align: center;
+        padding: 25px;
+        margin-bottom: 10px;
+    }
+
+    .presentation img{
+        width: 104px;
+        top: 61px;
+    }
+
+    .presentation h2{
+        font-size: 9px;
+        padding-top: 0px;
+    }
+
+    .presentation p{
+        font-size: 7px;
+    }
+
+    header.container{
+        width: 100%;
+        align: center;
+        margin-top: 25px;
+    }
+
+    .logo{
+        margin: 10px 10px 10px 10px;
+        background: #ccc8c8;
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 15px;
+    }
+
+    .headerTab a{
+        font-size: 8px;
+        float: left;
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    img.movements{
+        display: none;
+    }
+
+    img.movementsSVG{
+        display: none;
+    }
+
+    img.movementsSVGL{
+        display: none;
+    }
+
+    img.alignImg{
+        display: none;
+    }
+
+    .displayed{
+        width: 250px;
+        margin: 10px 40px;
+    }
+
+    .logo.alignImg{
+        display: inline-block;
+    }
+
+    h2.textSize{
+        font-size: 25px;
+        margin-left: 20px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    p.marginLeft{
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    h1.fade-in-text{
+        font-size: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .courses {
+        display: inline-block;
+    }
+
+    .courses .course {
+        width: 300px;
+        margin: 20px 45px;
+
+    }
+
+    .courses .course a{
+        font-size: 15px;
+    }
+
+    .aside{
+        width: 300px;
+        margin: 20px 45px;
+    }
+
+    iframe{
+        height: 200px;
+        width: 245px;
+
+    }
+
 }

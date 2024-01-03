@@ -2,7 +2,7 @@
 
 {% block main %}
   <div class="form-section container">
-    <h1>Authorization page</h1>
+    <h1>Strona autoryzacji</h1>
     <form method='POST' class="mt-2">
       {% csrf_token %}
       {{ form }}
@@ -10,6 +10,6 @@
       <button class="btn btn-outline-warning" type="submit">Log In</button>
     </form>
     <hr>
-    <p>Forgot password? <a href="{% url 'pass-reset' %}">Get new</a></p>
+    <p>Zapomniałeś hasła? <a href="{% url 'pass-reset' %}">Uzyskać nowe hasło</a></p>
   </div>
 {% endblock main %}

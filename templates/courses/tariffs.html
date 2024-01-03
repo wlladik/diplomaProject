@@ -1,14 +1,37 @@
 {% extends 'layout.html' %}
 
 {% block main %}
-<div class="form-section container">
-    {% if user.is_authenticated == False or user.profile.account_type == 'free' %}
-    <h1>Buy subscription on our site,</h1>
-    <p>subscription gives you access to every paid courses :)</p>
 
-    <button>Buy subscription (40$)</button>
-    {% else %}
-    <p>You have all-inclusive subscription!</p>
-    {% endif %}
-</div>
+    <div class="form-section container">
+        {% if user.is_authenticated == False or user.profile.account_type == 'free' %}
+        <h1>Kup subskrypcję na "IT Plecak",</h1>
+        <p>subskrypcja daje dostęp do każdego płatnego kursu :)</p>
+
+        <button>Kup subskrypcję (50$) z nielimitowanym dostępem!</button>
+        {% else %}
+        <p>Masz subskrypcję all-inclusive!</p><br>
+        <p>Wszystkie kursy znajdują się na stronie głównej :)</p>
+        {% endif %}
+    </div>
+
+    <div class = "courses container marginTop" >
+        <div class="course">
+            <img src="/pictures/course_images/pythonBeginner.jpg">
+
+            <h3><a href="{% url 'home' %}">Do strony głównej...</a></h3>
+        </div>
+            <div class="course">
+                <img src="/pictures/course_images/pythonBasic.jpg">
+
+                <h3><a href="{% url 'home' %}">Do strony głównej...</a></h3>
+            </div>
+
+            <div class="course">
+                <img src="/pictures/course_images/pythonJunior.jpg">
+
+                <h3><a href="{% url 'home' %}">Do strony głównej...</a></h3>
+            </div>
+    </div>
+
+
 {% endblock %}

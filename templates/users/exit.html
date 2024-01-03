@@ -2,7 +2,11 @@
 
 {% block main %}
  <div class="form-section container">
-   <h1>You successfully logged out!</h1>
-   <a href="{% url 'user' %}">Login to account</a>
+   <h1>Hej, czekamy na ciebie z powrotem!</h1>
+   <p>Jesteś wylogowany!</p><br>
+   <a href="{% url 'user' %}">Zaloguj się do konta!</a><br>
  </div>
+<div class = "courses container marginTop" >
+    <img src="/pictures/completeTab.svg" class="displayed" width="460" height="380">
+</div>
 {% endblock main %}
